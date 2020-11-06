@@ -1,0 +1,8 @@
+<h2>Delete Cliente {{pessoa}}</h2>
+
+<form action="{% url 'pessoa_delete' pessoa.id %}" method="POST">
+
+    {% csrf_token %}
+
+    <button type="submit">Deletar</button>
+</form>
