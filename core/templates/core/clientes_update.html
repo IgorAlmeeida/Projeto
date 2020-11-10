@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<h2>Update pessoa {{pessoa}}</h2>
+
+<form action="{% url 'pessoa_update' pessoa.id %}" method="POST">
+    {% csrf_token %}
+    
+    {{form.as_p}}
+
+    <button type="submit">Salvar</button>
+</form>
+
+<a href="{% url 'pessoa_delete' pessoa.id%}">Deletar</a>
+
+{% endblock%}
